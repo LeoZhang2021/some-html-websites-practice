@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name = "author" content = "Leo Zhang" /> <!-- meta元素 用来描述文档; meta提供关于 HTML 文档的元数据。元数据不会显示在页面上，但是对于机器是可读的 -->
+        <meta name = "description" content = " a draft website used to test what I learnt in HTML" /> <!-- 搜索引擎根据，meta的 name 和 content 来进行搜索 -->
+        <title>Leo Zhang's First Web Design</title >
+        <base target = "_blank" /> <!-- 使用base可以设置默认行为，例如链接在新页面打开 -->
+
+        <style> 
+
+            .bg{
+
+                background-image: url("../../Wallpaper/1012111.jpg");
+                background-attachment: fixed;
+                background-size: cover;
+            }
+
+            .note{
+                background-color:grey;
+                color:white;
+                margin:1px;
+                padding:1px;
+            }
+            span.red{
+                color : red;
+            }
+            #header{ 
+                color: white; 
+                background-color: black;
+                padding: 20px;
+                margin:3px;
+                text-align: center;
+            }
+            #nav{
+                background-color: rgb(77, 75, 75);
+                color:white;
+                float:left;
+
+                padding: 5px;
+                margin: 5px;
+            }
+            #section{
+                float:left;
+                width:1250px;
+                padding: 3px;
+                margin: 5px;
+            }
+            #footer{
+                background-color:black;
+                color:white;
+                clear:both;
+                text-align:center;
+            }
+
+        </style>
+    </head>
+
+    <body  class = "bg">
+            
+        <header>
+            <h1 id = "header"> Hello World</h1> <!-- id 对大小写敏感，不能包括空白字符, 且只能由页面中的一个html元素使用-->
+        </header>
+
+        <nav>
+            <div id = "nav">
+            <h3> Catalogue: </h3>
+            <ul>
+                <li><a href = "#C1" style = "color:white"> Chapter 1 </a></li> <!-- name anchor; direct to specified position-->
+                <li><a href = "#C2" style = "color:white"> Chapter 2 </a></li>
+                <li><a href = "#C3" style = "color:white"> Chapter 3 </a></li>
+                <li><a href = "#C4" style = "color:white"> Chapter 4 </a></li>  <!-- br enters a new line-->
+                <li><a href = "#C5" style = "color:white"> Chapter 5 </a></li>
+            </ul>
+            </div>
+        </nav>
+
+        <section>
+            <div id = "section">
+
+            <!-- chapt 1 --------------------------------------------------------------------------------------------------------------->
+
+            <hr/>
+            <a name = "C1"> Chapter 1: </a>
+            <h2 style = "font-family:verdana; text-align:center"> Link and Image </h2>
+
+            <a href="https://wall.alphacoders.com/" target="_blank"> Wallpapers </a> <br/><!-- link: only using href make the link clikable, other names wont make it clickable-->
+            <a href = "https://wall.alphacoders.com/"> <!-- making image a clickable link-->
+                <img src="../../Wallpaper/993395.jpg" alt = "cannot process" height="500" width="800"/> <!-- image -->
+            </a>
+            <hr/> <!-- hr generates a cut line-->
+
+            <!-- chapt 2 --------------------------------------------------------------------------------------------------------------->
+
+            <a name = "C2"> Chapter 2: </a>
+            <h2 style = "font-family:verdana; text-align:center"> for loop in <span class = "red">C++</span></h2>
+
+            <form>
+            <textarea rows="5" cols="100" maxlength="100" readonly>
+for(int i = 0; i &lt; 10; i++){
+     cout &lt;&lt; "this is a for loop"
+}
+            </textarea><br> <!-- pre can print all characters, include spaces and new line -->
+            </form>
+            <q>ECE 150, Douglas Harder</q><br> <!-- q automatically put a pair of qutation mark-->
+
+            <div class = "note">
+                <h3>ECE 150</h3>
+                <p>the course was taught by University of Waterloo professor, Douglas Harder.
+                    unfortunately, due to the pandemic, the course was conducted online.
+                    the outcome was not as good as what we expected &#128516;.
+                </p>
+            </div><hr/>
+
+            <!-- chapt 3 --------------------------------------------------------------------------------------------------------------->
+
+            <a name = "C3"> Chapter 3: </a>
+            <h2 style = "text-align: center;"> Tables </h2>
+            <p> this chapter briefly introduces <span class = "note"> HTML default table functions</span>. For more table template, check CSS</p><br/>
+
+            <table border = "3" cellpadding = '2' cellspacing = 1 bgcolor = white> <!-- border manipulate table border size, cellpadding 单元格边距-, cellspacing 单元格间距-->
+                <caption>Cash Flow</caption> <!-- table title-->
+                <tr bgcolor = yellow> <!-- tr refers to table row-->
+                    <th bgcolor = green>Date</th>  <!-- th refers to table heading-->
+                    <th>transaction amount</th>
+                    <th>profit</th>
+                </tr><tr>
+                    <td>5/3/2022</td> <!-- td refers to table column-->
+                    <td align = "right">5000</td>
+                    <td align = "right">1200</td>
+                </tr><tr>
+                    <td>5/6/2022</td>
+                    <td align = "right">1000</td>
+                    <td align = "right">-200</td>
+                </tr><tr>
+                    <td>N/A</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table><br/><hr/>
+
+            <!-- chapt 4 --------------------------------------------------------------------------------------------------------------->
+
+            <a name = "C4"> Chapter 3: </a>
+            <h2 style = "text-align: center;"> Lists </h2>
+
+            <ul type = "circle"> <!--unordered list-->
+                <li>Leo Zhang</li>
+                <li>Elon Musk</li>
+                <li>Bill Gates</li>
+            </ul>
+
+            <ol type = "I"> <!-- ordered list-->
+                <li>Genius</li>
+                <li>Noble</li>
+                <li>Wealthy</li>
+            </ol>
+
+            <dl> <!-- 自定义列表 -->
+                <dt> undergraduate </dt> <!-- dt indicates heading/title-->
+                <dd> Computer Engineering</dd> <!-- dd indicates data/content-->
+                    <ul>
+                        <li>QA</li>
+                        <li>Dev</li>
+                        <li>Operations</li>
+                    </ul>
+                <dd> Electrical Engineering</dd>
+                <dt> JOB </dt>
+                <dd>Operations</dd>
+                <dd>Developer</dd>
+            </dl><hr/>
+
+            <!-- chapt 5 --------------------------------------------------------------------------------------------------------------->
+
+            <a name = "C5"> Chapter 5: </a>
+            <h2 style = "text-align: center;"> IFrame </h2>
+
+            <iframe src = "file:///Users/leo/Desktop/HTML&CSS/html/draft.html" name = "iframe_1" width = "600" height = "200" frameborder = '1'></iframe>
+            <p><a href = "http://www.google.com" target = "iframe_1" alt = "cannot process"> link of pornhub (click with caution) </a></p>
+
+            </div>
+
+            <div id = "footer">
+
+            <a href = "#title" style = "color:white"> back to title</a>
+
+            </div>
+        </section>
+
+    </body>
+</html>

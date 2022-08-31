@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang = "en_US">
+
+    <head>
+
+        <meta charset = "UTF-8" />
+        <meta name = "author" content = "Leo Zhang" />
+        <meta name = "description" content = "a sample registration webpage" />
+        <title>registration web page</title>
+    
+        <style>
+    
+            #header{ 
+                color: white; 
+                background-color: black;
+                padding: 30px;
+                text-align: center;
+                margin: 3px;
+            }
+
+            #footer{
+                background-color:black;
+                color:white;
+                clear:both;
+                text-align:left;
+                padding: 6px;
+                margin:3px;
+            }
+    
+        </style>
+    
+    </head>
+    
+    <body style = "background-color: blanchedalmond" onload="checkCookies()">
+
+        <script>
+
+            function text_but(){
+                document.getElementById("demo").innerHTML  = "哎，不好意思啊，那啥功能还不太完善";
+            }
+
+            function checkCookies() {
+                var text = "";
+                if (navigator.cookieEnabled == true) {
+                    text = "Cookie enanled";
+                } else {
+                    text = "Cookie disabled";
+                }
+                window.alert(text);
+            }
+
+            //document.getElementById("sub_but").addEventListener("click", function(){ alert("error"); });
+
+        </script>
+
+        <header >
+            <h1 id = "header"> LZ SuperChick Holding Ltd&#174; 
+            <p style = "font-size: medium">Top technology compnent production company in Canada</p></h1>
+        </header>
+
+        <section>
+            <p>Thank you for your application to LZ SuperChick Holding Ltd&#174;. Please complete the following form before you submit your application</p><hr/>
+        </section>
+
+        <section>
+            <form> <!-- form 包含表单元素，用来收集用户输出 -->
+                <fieldset>
+                    <legend>Personal information:</legend>
+
+                    Photo: <input type="file" name="img" multiple><br/><hr/>
+                    <!-- 若要提交表单，输入信息必须以 name 关键字来修饰 -->
+                    First name:<br/> <input type="text" name="firstname" maxlength="12" placeholder="First name" required><br> 
+                    Last name:<br/> <input type="text" name="lastname" maxlength="12" placeholder="Last name" required><br>
+                    Phone number:<br/> <input type="text" name="phone" maxlength="12" placeholder="phone" required><br>
+                    Email address :<br/> <input type="email" name="email" maxlength="20" placeholder="email" required><br>
+                    Current Status :<br/>   <input list="stat">
+                                            <datalist id = "stat">
+                                                <option value="Canadian Citizen"></option>
+                                                <option value="PR"></option>
+                                                <option value="work permit"></option>
+                                                <option value="others"></option>
+                                            </datalist><br>
+                    Date of Birth:<br/> <input type="date" name="bday" min="1930-12-31" max="2022-12-31"><br/>
+                    <button onclick="text_but()"> save </button>
+                    <p id="demo"></p>
+                </fieldset><hr/>
+            </form>
+            <form>
+                <fieldset> <!-- fieldset 用来集合表单数据，同时添加边框-->
+                    <legend>Create your account:</legend>
+
+                    <p> please enter your username and password</p>
+                    Username:<br/> <input type = "text" name = "username" placeholder="username" required><br>
+                    Password:<br/> <input type = "password" name = "password" placeholder="password" required><br>
+                    <input type="button" value="save">
+                </fieldset><hr/>
+            </form>
+            <form action="">
+                <p> please select your gender</p>
+                <input type="radio" name="gender" value="male"> Male <br>
+                <input type="radio" name="gender" value="female"> Female <hr/>
+            </form>
+            <form>
+
+                <fieldset>
+
+                    <legend>Skills</legend>
+
+                    coding experience: 
+                    <input type="number" name="quantity" min="0" max="35"> years <br/>
+
+                    <input type="checkbox" name="C/C++" value="C/C++"> C++<br>
+                    <input type="checkbox" name="Python" value="Python"> Python <br>
+                    <input type="checkbox" name="Java" value="Java"> Java <br>
+                    <input type="checkbox" name="PHP" value="PHP"> PHP <br>
+                    <input type="checkbox" name="HTML/CSS" value="HTML/CSS"> HTML/CSS <br>
+                    <input type="checkbox" name="Javascript" value="Javascript"> Javascript <hr/>
+
+                    level <input type="range" name="level" min="0" max="10">
+
+                </fieldset>
+            </form>
+            <form action="">
+                <p>please choose your education level</p>
+                <select name="edu">
+                <option value="PHD">PHD</option>
+                <option value="Graduate">Graduate</option>
+                <option value="Undergraduate" selected>Undergraduate</option>
+                <option value="High School">High School</option>
+                <option value="Others">Others</option>
+                </select>
+            </form><hr/>
+            <form>
+                <p style = "text-align: left;">Please briefly describe about yourself</p>
+                <textarea rows="20" cols="100" maxlength="300">
+please enter text here ( maximum 300 worlds )
+                </textarea><br>
+                <input type="button" value="save">
+            </form><hr/>
+
+            <form action = ""> <!-- action属性 定义提交表单时要执行的操作，指定用来处理表单的服务器脚本（如果省略 action 属性，则将 action 设置为当前页面） -->
+            <input id = "sub_but" type = "submit" value = "submit" style = "float: right; width:80px; height:40px; background-color: green; color:white; margin:3px">
+            </form>
+            <br><br/><hr/>
+
+            <script>
+                document.getElementById("sub_but").addEventListener("click", function(){ alert("error"); });
+            </script>
+
+        </section>
+
+        <footer>
+
+            <pre id = "footer">
+
+LZ SuperChick Holding LTD &#174;
+
+contact : <a href = "leozhan553@gmail.com" style = color:white> email </a>
+          <abbr title = "7786819980"> phone </abbr>
+
+<address>273 BlueFrog Ave West, Toronto, ON</address>
+            </pre>
+        </footer>
+    
+    </body>
+</html>
